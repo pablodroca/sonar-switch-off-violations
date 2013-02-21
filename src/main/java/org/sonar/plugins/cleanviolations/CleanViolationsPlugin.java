@@ -1,5 +1,5 @@
 /*
- * Sonar Switch Off Violations Plugin
+ * Sonar Clean Violations Plugin
  * Copyright (C) 2011 SonarSource
  * dev@sonar.codehaus.org
  *
@@ -18,15 +18,25 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02
  */
 
-package org.sonar.plugins.switchoffviolations;
+package org.sonar.plugins.cleanviolations;
 
-import org.junit.Test;
+import com.google.common.collect.ImmutableList;
+import org.sonar.api.BatchExtension;
+import org.sonar.api.Properties;
+import org.sonar.api.Property;
+import org.sonar.api.PropertyField;
+import org.sonar.api.PropertyType;
+import org.sonar.api.SonarPlugin;
 
-import static org.fest.assertions.Assertions.assertThat;
+import java.util.List;
 
-public class SwitchOffViolationsPluginTest {
-  @Test
-  public void justForCoverage() {
-    assertThat(new SwitchOffViolationsPlugin().getExtensions()).hasSize(4);
+public final class CleanViolationsPlugin extends SonarPlugin {
+
+  static final int LARGE_SIZE = 20;
+  static final int SMALL_SIZE = 10;
+
+  public List<Class<? extends BatchExtension>> getExtensions() {
+    return null;
   }
+
 }
