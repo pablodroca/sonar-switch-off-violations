@@ -53,6 +53,22 @@
     <sonar.pluginClass>org.sonar.plugins.cleanviolations.CleanViolationsPlugin</sonar.pluginClass>
     <sonar.pluginName>Clean Violations</sonar.pluginName>
   </properties>
+  
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.codehaus.sonar</groupId>
+      <artifactId>sonar-plugin-api</artifactId>
+      <version>${sonar.buildVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.sonar</groupId>
+      <artifactId>sonar-batch</artifactId>
+      <version>${sonar.buildVersion}</version>
+    </dependency>
+
+  </dependencies>
+
 <build>
   <plugins>
     <plugin>
@@ -64,6 +80,20 @@
         <pluginClass>org.sonar.plugins.cleanviolations.CleanViolationsPlugin</pluginClass>
       </configuration>
     </plugin>
+	 <plugin>
+            <groupId>com.mycila.maven-license-plugin</groupId>
+            <artifactId>maven-license-plugin</artifactId>
+            <configuration>
+				<skip>true</skip>
+			</configuration>
+	</plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
   </plugins>
 </build>
 </project>
